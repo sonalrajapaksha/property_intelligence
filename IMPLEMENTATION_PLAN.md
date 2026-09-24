@@ -9,8 +9,8 @@ The phases follow `spec.md`. A checkbox is complete only after its code and rele
 - [x] Clean startup and foundation smoke tests
 
 ## Phase 2 — Core data model
-- [ ] Property, Transaction, Source, RawObservation, ImportJob models
-- [ ] Initial migration and model tests
+- [x] Property, Transaction, Source, RawObservation, ImportJob models
+- [x] Initial migration and model tests
 
 ## Phase 3 — Data pipeline
 - [ ] CSV/XLSX parsing and column mapping
