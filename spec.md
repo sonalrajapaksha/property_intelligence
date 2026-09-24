@@ -1,77 +1,94 @@
-# NZ Commercial Property Transaction Intelligence
+# Property Intel
 
-## 0. Mission
-
-Build a polished **NZ Commercial Property Transaction Intelligence** platform that converts messy commercial-property data into reliable, searchable market intelligence.
-
-The project should demonstrate the workflow:
-
-```text
-MESSY PROPERTY DATA
-        ↓
-INGESTION
-        ↓
-NORMALISATION + VALIDATION
-        ↓
-ENTITY RESOLUTION
-        ↓
-CLEAN TRANSACTION DATABASE
-        ↓
-MARKET ANALYTICS
-        ↓
-COMPARABLE SALES
-        ↓
-PROFESSIONAL EXCEL REPORT
-```
-
-This is a focused portfolio project, not an attempt to build an entire commercial-real-estate operating system.
-
-The finished application should be impressive enough to:
-
-* show a commercial-property recruiter,
-* demonstrate during an interview in 90 seconds,
-* feature prominently on a CV,
-* publish publicly on GitHub,
-* and demonstrate strong Engineering Science/data-analysis ability.
-
-The project should particularly demonstrate skills relevant to commercial-property research:
-
-* maintaining property databases,
-* researching transactions,
-* working with large datasets,
-* validating market information,
-* identifying duplicate/inconsistent records,
-* analysing transaction activity,
-* producing market intelligence,
-* Excel,
-* and attention to detail.
+> A terminal-native market intelligence workstation for New Zealand commercial-property research.
 
 ---
 
-# 1. Core Product
+# 0. Mission
 
-The platform tracks NZ commercial-property transactions across three sectors:
+Build **Property Intel**, a polished keyboard-driven TUI application that converts messy commercial-property transaction data into reliable, searchable market intelligence.
+
+The core workflow is:
+
+```text
+CSV / XLSX
+     │
+     ▼
+Raw Observations
+     │
+     ▼
+Cleaning & Normalisation
+     │
+     ▼
+Validation
+     │
+     ▼
+Entity Resolution
+     │
+     ▼
+Canonical SQLite Database
+     │
+     ├──────────────┬───────────────┐
+     ▼              ▼               ▼
+ Transactions   Comparables     Data Quality
+     │              │               │
+     └──────────────┴───────────────┘
+                    │
+                    ▼
+              Textual TUI
+                    │
+                    ▼
+              Excel Reports
+```
+
+This is intentionally **not** a web application.
+
+Do not build:
+
+* a website,
+* REST API,
+* Docker setup,
+* cloud infrastructure,
+* authentication,
+* microservices,
+* AI chatbot,
+* LLM features,
+* complex ML valuation model.
+
+The objective is to build a **small, exceptionally polished analytical tool**.
+
+The final repository should be good enough to:
+
+* feature prominently on a CV,
+* show a commercial-property recruiter,
+* demonstrate live during an interview,
+* publish publicly on GitHub,
+* and demonstrate strong data engineering, analytics and software-engineering ability.
+
+---
+
+# 1. Product Context
+
+The application is designed around commercial-property research tasks such as:
+
+* maintaining property databases,
+* researching transactions,
+* tracking sales,
+* validating property information,
+* identifying duplicate/inconsistent records,
+* analysing market activity,
+* finding comparable transactions,
+* and producing Excel market intelligence.
+
+Initial sectors:
 
 1. Service Stations
 2. Quick-Service Restaurants / Fast Food
 3. Healthcare
 
-The user should be able to:
+Initial geography:
 
-1. import messy CSV/XLSX transaction data,
-2. standardise it,
-3. detect invalid/suspicious records,
-4. resolve duplicate properties,
-5. create canonical property records,
-6. search and filter transactions,
-7. inspect an individual property,
-8. analyse market trends,
-9. find comparable transactions,
-10. export a professional Excel market report.
-
-That is the entire product.
-
-Do not expand the scope unless an addition materially improves this workflow.
+**New Zealand**
 
 ---
 
@@ -81,193 +98,261 @@ Prioritise:
 
 ```text
 DATA QUALITY
-    ↓
-USEFUL ANALYTICS
-    ↓
+     ↓
 EXPLAINABILITY
-    ↓
-EXCELLENT UX
-    ↓
+     ↓
+ANALYTICAL VALUE
+     ↓
+WORKFLOW SPEED
+     ↓
 VISUAL POLISH
 ```
 
-Do not prioritise number of features.
+The application should feel like a compact professional analyst workstation.
 
-A small application in which every workflow feels complete is preferable to a large application containing unfinished functionality.
+Think:
 
-The application should feel like a tool an analyst could genuinely use.
+**Bloomberg-style keyboard workflow**
+
+combined with:
+
+**modern terminal UI**
+
+combined with:
+
+**commercial-property research**
+
+Do not imitate Bloomberg visually.
+
+Develop a distinct identity.
 
 ---
 
-# 3. Required Codex Skills
+# 3. Scope
 
-Before implementation, locate and read the complete instructions for:
+The entire application consists of approximately five primary experiences:
 
-* `impeccable`
+```text
+1. Market Overview
+2. Transactions
+3. Properties
+4. Data Quality / Entity Resolution
+5. Import
+```
+
+Comparable sales live within the property workflow.
+
+Excel export is available throughout the application where relevant.
+
+That's it.
+
+Do not expand the primary navigation.
+
+---
+
+# 4. Required Skills
+
+Before implementation, inspect the available Codex skills.
+
+Locate and read:
+
 * `ponytail`
+* `impeccable`
 * `uncodixfy`, if available
 
-Apply them throughout development.
+Do not assume what these skills mean.
 
-Do not merely run them at the end.
-
-## Impeccable
-
-Use `impeccable` to produce an unusually polished interface.
-
-The application should resemble:
-
-**institutional market intelligence × modern data product × commercial real-estate research**
-
-Avoid:
-
-* generic shadcn dashboard appearance,
-* excessive cards,
-* excessive rounding,
-* gradients everywhere,
-* enormous headings,
-* meaningless icons,
-* decorative animations,
-* AI SaaS visual clichés,
-* excessive badges,
-* huge amounts of whitespace,
-* and landing-page styling inside the application.
-
-Prefer:
-
-* strong typography,
-* restrained colour,
-* dense but readable information,
-* excellent tables,
-* precise alignment,
-* subtle borders,
-* thoughtful whitespace,
-* professional charts,
-* excellent number formatting,
-* strong visual hierarchy,
-* polished filters,
-* excellent hover/focus states,
-* meaningful loading/empty/error states.
+Read their actual instructions.
 
 ## Ponytail
 
-Read and apply the actual `ponytail` skill instructions.
+`ponytail` is mandatory.
 
-Use it continuously where relevant.
+Apply the actual Ponytail workflow throughout implementation.
 
-Do not guess what the skill does.
+Do not merely run it once at the end.
+
+Run relevant Ponytail checks/reviews after substantial product phases and again before completion.
+
+## Impeccable
+
+Apply `impeccable` to the TUI.
+
+The fact that this is a terminal application is not an excuse for mediocre design.
+
+Pay particular attention to:
+
+* information hierarchy,
+* spacing,
+* borders,
+* typography,
+* table density,
+* selected states,
+* focus states,
+* command discoverability,
+* status messages,
+* keyboard workflow,
+* empty states,
+* modal design,
+* charts,
+* number formatting,
+* consistent visual language.
 
 ## Uncodixfy
 
-If available, use `uncodixfy` to remove AI-generated-code patterns.
+If available, use `uncodixfy` to remove characteristic low-quality AI-generated code.
+
+Prefer:
+
+* direct implementations,
+* precise domain names,
+* small cohesive modules,
+* minimal dependencies,
+* obvious data flow,
+* useful comments only.
 
 Avoid:
 
-* unnecessary abstraction,
-* obvious comments,
-* giant docstrings,
-* redundant wrappers,
-* meaningless helpers,
-* excessive defensive code,
-* fake enterprise architecture,
-* unnecessary configuration,
-* generic naming,
-* dead code,
-* placeholder implementations,
-* and unnecessary dependencies.
-
-The repository should look deliberately engineered.
+* unnecessary factories,
+* manager classes,
+* service layers without purpose,
+* generic helper dumping grounds,
+* huge docstrings,
+* comments restating code,
+* premature abstraction,
+* needless configuration,
+* placeholder functionality,
+* excessive defensive programming,
+* dead code.
 
 ---
 
-# 4. Technology
+# 5. Technology Stack
 
-Use:
+Use Python.
 
-## Backend
+Recommended stack:
 
-* Python 3.12+
-* FastAPI
-* SQLAlchemy
-* Alembic
-* PostgreSQL
-* pandas
-* NumPy
-* RapidFuzz
-* scikit-learn only where useful
-* openpyxl
-* Pydantic
-* pytest
+```text
+Python 3.12+
+Textual
+Rich
+SQLite
+SQLAlchemy
+Alembic
+pandas
+NumPy
+RapidFuzz
+openpyxl
+pytest
+Ruff
+mypy
+```
 
-PostGIS is optional.
+Use another small dependency only where clearly justified.
 
-Do not add it unless geographic queries materially benefit from it.
+Do not use:
 
-## Frontend
+```text
+Docker
+FastAPI
+Django
+Flask
+React
+Next.js
+PostgreSQL
+Redis
+Celery
+Kubernetes
+Electron
+```
 
-* Next.js
-* TypeScript
-* React
-* Tailwind CSS
-* shadcn/ui as primitives, not as the visual identity
-* TanStack Query
-* TanStack Table
-* Recharts
+unless this specification is explicitly changed.
 
-For mapping, use MapLibre only if the map is retained.
+---
 
-## Infrastructure
+# 6. Package Management
 
-* Docker
-* Docker Compose
-* `.env.example`
-* Makefile
+Use a modern Python project configuration.
 
-The project should start approximately with:
+Prefer:
+
+```text
+pyproject.toml
+```
+
+Support a straightforward development workflow such as:
 
 ```bash
-cp .env.example .env
-docker compose up --build
+uv sync
+uv run property-intel
+```
+
+or equivalent.
+
+If `uv` is selected, use it consistently.
+
+The application should also expose a CLI entry point:
+
+```bash
+property-intel
 ```
 
 ---
 
-# 5. Repository
+# 7. Repository Structure
 
-Use:
+Keep the repository compact.
+
+Use approximately:
 
 ```text
-nz-property-intelligence/
+property-intel/
 │
 ├── README.md
 ├── MASTER_SPEC.md
 ├── IMPLEMENTATION_PLAN.md
-├── docker-compose.yml
-├── Makefile
+├── pyproject.toml
+├── .gitignore
 ├── .env.example
 │
-├── backend/
-│   ├── app/
-│   │   ├── api/
-│   │   ├── models/
-│   │   ├── schemas/
-│   │   ├── ingestion/
-│   │   ├── cleaning/
-│   │   ├── matching/
-│   │   ├── analytics/
-│   │   ├── reporting/
-│   │   └── database/
-│   └── tests/
+├── src/
+│   └── property_intel/
+│       ├── app.py
+│       ├── config.py
+│       │
+│       ├── db/
+│       │   ├── models.py
+│       │   ├── session.py
+│       │   └── migrations/
+│       │
+│       ├── ingestion/
+│       │   ├── importer.py
+│       │   ├── mapping.py
+│       │   └── parsers.py
+│       │
+│       ├── matching/
+│       │   ├── normalise.py
+│       │   ├── scoring.py
+│       │   └── resolution.py
+│       │
+│       ├── analytics/
+│       │   ├── market.py
+│       │   └── comparables.py
+│       │
+│       ├── reporting/
+│       │   └── excel.py
+│       │
+│       └── ui/
+│           ├── screens/
+│           ├── widgets/
+│           └── styles/
 │
-├── frontend/
-│   ├── app/
-│   ├── components/
-│   ├── features/
-│   ├── lib/
-│   └── types/
+├── tests/
 │
 ├── data/
-│   └── sample/
+│   ├── demo/
+│   └── exports/
 │
 └── docs/
     ├── architecture.md
@@ -276,15 +361,39 @@ nz-property-intelligence/
     └── screenshots/
 ```
 
-Do not create excessive nesting.
+Do not create dozens of tiny modules simply to appear architecturally sophisticated.
 
 ---
 
-# 6. Data Model
+# 8. Database
 
-Keep the schema intentionally small.
+Use SQLite.
 
-## Property
+The application should automatically initialise its local database when necessary.
+
+Default:
+
+```text
+data/property_intel.db
+```
+
+Allow configuration of the database location.
+
+SQLite is intentional.
+
+The project does not need distributed infrastructure.
+
+---
+
+# 9. Core Data Model
+
+Keep the model small.
+
+There should be approximately five main tables.
+
+---
+
+# 10. Property
 
 ```text
 Property
@@ -307,7 +416,7 @@ created_at
 updated_at
 ```
 
-Sector:
+Sector enum:
 
 ```text
 SERVICE_STATION
@@ -318,7 +427,7 @@ OTHER
 
 ---
 
-# 7. Transaction
+# 11. Transaction
 
 ```text
 Transaction
@@ -336,18 +445,18 @@ source_id
 created_at
 ```
 
-Derived values should include:
+Derived metrics:
 
 ```text
 price_per_land_m2
 price_per_building_m2
 ```
 
-Do not store derived values unnecessarily if they can reliably be calculated.
+Prefer calculating these rather than unnecessarily persisting them.
 
 ---
 
-# 8. Source
+# 12. Source
 
 ```text
 Source
@@ -359,28 +468,23 @@ reference
 retrieved_at
 ```
 
-Every transaction should have a source where possible.
+Keep provenance simple.
 
-Do not build an elaborate provenance graph.
-
-Simple, visible provenance is enough.
+Every transaction should reference its source where available.
 
 ---
 
-# 9. Raw Observation
+# 13. Raw Observation
 
-This is important.
+Never import messy data directly into canonical property records.
 
-Do not import messy records directly into canonical tables.
-
-Create:
+Use:
 
 ```text
 RawObservation
 --------------
 id
 import_job_id
-raw_payload
 raw_address
 raw_owner
 raw_tenant
@@ -388,33 +492,20 @@ raw_sale_price
 raw_sale_date
 raw_land_area
 raw_building_area
+raw_payload_json
 status
 created_at
 ```
 
-The architecture becomes:
+This distinction is central to the project:
 
 ```text
-SOURCE FILE
-    ↓
-RAW OBSERVATION
-    ↓
-NORMALISATION
-    ↓
-VALIDATION
-    ↓
-ENTITY RESOLUTION
-    ↓
-PROPERTY + TRANSACTION
+RAW OBSERVATION ≠ CANONICAL PROPERTY
 ```
-
-This is one of the main technical ideas demonstrated by the project.
 
 ---
 
-# 10. Import Job
-
-Create:
+# 14. Import Job
 
 ```text
 ImportJob
@@ -430,61 +521,180 @@ records_flagged
 status
 ```
 
-This provides enough auditability without building a complete audit system.
+Do not build a larger audit system.
 
 ---
 
-# 11. Data Import
+# 15. Demo Dataset
+
+Create a deterministic synthetic dataset containing approximately:
+
+```text
+300–500 canonical properties
+500–700 transactions
+600–900 raw observations
+```
+
+Cover:
+
+* Auckland
+* Wellington
+* Canterbury
+* Waikato
+* Bay of Plenty
+* other NZ regions
+
+and:
+
+* service stations,
+* QSR,
+* healthcare.
+
+---
+
+# 16. Deliberately Messy Data
+
+The demo data must actually exercise the pipeline.
+
+Include:
+
+### Address variants
+
+```text
+123 Queen Street, Auckland CBD
+123 QUEEN ST AUCKLAND
+123 Queen St, Auckland
+```
+
+### Company variants
+
+```text
+Example Holdings Limited
+EXAMPLE HOLDINGS LTD
+Example Holdings Ltd.
+```
+
+### Currency variants
+
+```text
+$4.2m
+4,200,000
+$4200000
+4.2 million
+```
+
+### Area variants
+
+```text
+1,250 sqm
+1250 m2
+0.125 ha
+```
+
+### Date variants
+
+```text
+14/03/2026
+2026-03-14
+14 Mar 2026
+```
+
+Also include:
+
+* missing fields,
+* suspicious yields,
+* invalid prices,
+* repeated properties,
+* similar but distinct addresses,
+* conflicting observations.
+
+Use a fixed random seed.
+
+---
+
+# 17. Synthetic Data Disclosure
+
+The TUI must visibly indicate:
+
+```text
+DEMO DATA — SYNTHETIC
+```
+
+when using bundled demonstration data.
+
+The README must clearly state that the data does not represent actual NZ market statistics.
+
+---
+
+# 18. Ingestion
 
 Support:
 
-* CSV
-* XLSX
+```text
+CSV
+XLSX
+```
 
-JSON is optional.
+No additional formats are required.
 
-Build an import wizard:
+---
 
-### Step 1 — Upload
+# 19. Import Workflow
 
-Upload CSV/XLSX.
+The TUI should support:
 
-### Step 2 — Column Mapping
+```text
+SELECT FILE
+     ↓
+MAP COLUMNS
+     ↓
+PREVIEW
+     ↓
+NORMALISE
+     ↓
+VALIDATE
+     ↓
+DUPLICATE CHECK
+     ↓
+IMPORT
+```
+
+Do not overcomplicate the workflow.
+
+---
+
+# 20. Column Mapping
+
+Allow the user to map incoming columns.
 
 Example:
 
 ```text
-Uploaded column       Platform field
+INPUT COLUMN                    PROPERTY INTEL FIELD
 
-Property Address  →   address
-Sale Amount       →   sale_price
-Settlement Date   →   transaction_date
-Site Area         →   land_area
+Property Address               address
+Settlement Date                transaction_date
+Sale Amount                    sale_price
+Site Area                      land_area
+Purchaser                      buyer
+Vendor                         seller
 ```
 
-### Step 3 — Preview
+Where obvious, automatically suggest mappings.
 
-Show transformed values.
-
-### Step 4 — Validate
-
-Show problems.
-
-### Step 5 — Resolve
-
-Run duplicate detection.
-
-### Step 6 — Import
-
-Create canonical records.
+User must be able to correct them.
 
 ---
 
-# 12. Cleaning Pipeline
+# 21. Normalisation
 
-This is a flagship component.
+Build deterministic normalisers.
 
-## Address Normalisation
+This is one of the strongest parts of the project.
+
+---
+
+# 22. Address Normalisation
 
 Handle:
 
@@ -493,47 +703,44 @@ Street → St
 Road → Rd
 Avenue → Ave
 Mount → Mt
+Highway → Hwy
 ```
 
 Normalise:
 
+* case,
 * whitespace,
 * punctuation,
-* casing,
-* common abbreviations,
-* postcodes.
+* postcodes,
+* common abbreviations.
 
-Preserve the original value.
+Preserve original values.
 
-Example:
-
-```text
-" 123 QUEEN STREET, Auckland CBD "
-            ↓
-"123 Queen St, Auckland CBD"
-```
+Do not aggressively transform addresses in ways that increase false matches.
 
 ---
 
-# 13. Company Normalisation
+# 23. Company Normalisation
 
-Normalise common company suffixes.
-
-Example:
+Normalise common suffix differences:
 
 ```text
-BP Oil NZ Limited
-BP OIL NZ LTD
-BP Oil NZ Ltd.
+Limited
+Ltd
+Ltd.
 ```
 
-should have comparable normalised representations.
+and:
 
-Do not destroy the original source value.
+* whitespace,
+* punctuation,
+* case.
+
+Preserve original names.
 
 ---
 
-# 14. Currency Parsing
+# 24. Currency Parsing
 
 Support:
 
@@ -542,357 +749,418 @@ $4.2m
 $4,200,000
 4200000
 4.2 million
+850k
+$850k
 ```
 
-→
+Convert to numeric NZD values.
 
-```text
-4200000
-```
-
-Test thoroughly.
+Test edge cases.
 
 ---
 
-# 15. Area Parsing
+# 25. Area Parsing
 
-Support values such as:
+Support:
 
 ```text
 1,250 sqm
+1,250 m²
 1250 m2
-1.25 ha
+0.125 ha
 ```
 
 Convert internally to square metres.
 
 ---
 
-# 16. Date Parsing
+# 26. Date Parsing
 
 Support common NZ date formats.
 
-Normalise to proper date objects.
+If genuinely ambiguous:
 
-Ambiguous dates should be flagged rather than silently guessed.
+```text
+03/04/2026
+```
+
+do not silently invent an interpretation unless the import format explicitly establishes one.
+
+Flag ambiguous values for review.
 
 ---
 
-# 17. Validation
+# 27. Validation
 
-Create deterministic validation rules.
+Implement deterministic rules.
 
-Examples:
+Errors:
 
 ```text
 sale_price <= 0
 land_area <= 0
 building_area <= 0
-transaction_date > today
-yield < 0
-yield > 30%
-invalid postcode
-coordinates outside NZ
+future transaction date
+invalid date
 ```
 
-Classify:
+Warnings:
 
 ```text
-ERROR
-WARNING
-```
-
-Errors prevent automatic import.
-
-Warnings allow analyst review.
-
----
-
-# 18. Suspicious Data
-
-Create useful sanity checks.
-
-Examples:
-
-```text
-sale price > $100m
-sale price < $50k
 yield > 20%
-building area extremely large relative to land area
-price/m² extreme relative to dataset
+very high sale price
+very low sale price
+extreme $/m²
+building area substantially greater than land area
+missing owner
+missing tenant
 ```
 
-Do not claim suspicious records are incorrect.
-
-Label them:
-
-**Requires Review**
+Do not treat missing optional information as an error.
 
 ---
 
-# 19. Entity Resolution
+# 28. Validation Results
 
-This is the technical centrepiece.
-
-Multiple observations may describe the same physical property.
-
-Example:
+Represent:
 
 ```text
-123 Queen Street, Auckland
-123 Queen St Auckland CBD
-123 QUEEN ST, AUCKLAND
+severity
+field
+rule
+message
 ```
 
-The system should identify likely duplicates.
+The TUI should explain problems in human-readable language.
+
+Bad:
+
+```text
+ERR_VALIDATION_003
+```
+
+Good:
+
+```text
+Reported yield of 24.8% is unusually high and should be reviewed.
+```
 
 ---
 
-# 20. Matching Features
+# 29. Entity Resolution
+
+Entity resolution is the technical centrepiece.
+
+The system must identify raw observations that probably correspond to an existing canonical property.
+
+---
+
+# 30. Matching Signals
 
 Use:
 
-* normalized address similarity,
-* street number equality,
-* postcode,
-* geographic distance where coordinates exist,
-* land-area similarity,
-* building-area similarity,
-* tenant similarity.
-
-Construct an explainable score.
-
-Example:
-
-$$
-S =
-w_aS_{address}
-+
-w_gS_{geo}
-+
-w_lS_{land}
-+
-w_tS_{tenant}
-$$
-
-Keep weights configurable in one obvious location.
-
-Do not use a black-box model unless there is compelling evidence it performs better.
-
----
-
-# 21. Match Thresholds
-
-Use approximately:
-
 ```text
-score >= 0.93
-→ automatic match
-
-0.75 <= score < 0.93
-→ manual review
-
-score < 0.75
-→ separate property
+normalized address similarity
+street number
+postcode
+city/suburb
+land area similarity
+building area similarity
+tenant similarity
+coordinates if available
 ```
 
-Tune using a labelled evaluation set.
+Do not require every signal.
 
 ---
 
-# 22. Duplicate Review UI
+# 31. Explainable Match Score
 
-Create one excellent review interface.
+Implement an interpretable score.
 
-Example:
+For example:
+
+$$
+S(i,j)
+=
+w_aS_a+
+w_gS_g+
+w_lS_l+
+w_bS_b+
+w_tS_t
+$$
+
+where:
 
 ```text
-Potential Duplicate                           96% MATCH
-
-SOURCE RECORD                   EXISTING PROPERTY
-
-123 Queen Street                123 Queen St
-Auckland CBD                    Auckland CBD
-
-Service Station                 Service Station
-1,247 m²                        1,250 m²
-BP                              BP
-
-
-MATCH EVIDENCE
-
-Address similarity                  98%
-Land-area similarity                99%
-Tenant match                       Exact
-Geographic distance                 14 m
-
-
-                 Keep Separate     Merge Records
+Sa = address similarity
+Sg = geographic similarity
+Sl = land-area similarity
+Sb = building-area similarity
+St = tenant similarity
 ```
 
-The reviewer should understand exactly why the match was proposed.
+Weights should live in one obvious configuration location.
 
 ---
 
-# 23. Entity Resolution Evaluation
+# 32. Match Thresholds
 
-Create a small manually labelled dataset.
+Start approximately with:
+
+```text
+S >= 0.93
+    automatic match
+
+0.75 <= S < 0.93
+    manual review
+
+S < 0.75
+    distinct property
+```
+
+Tune using labelled examples.
+
+---
+
+# 33. Protect Against False Merges
+
+False merges are worse than false splits.
+
+Explicitly test cases such as:
+
+```text
+12 Queen St
+123 Queen St
+```
+
+and:
+
+```text
+Unit 1, 40 Example Rd
+Unit 2, 40 Example Rd
+```
+
+Do not merge merely because strings are similar.
+
+---
+
+# 34. Evaluation
+
+Create a small labelled duplicate dataset.
 
 Report:
 
-* precision,
-* recall,
-* F1,
-* false merges.
-
-False merges are particularly important.
-
-Document methodology in:
-
 ```text
-docs/entity-resolution.md
+Precision
+Recall
+F1
+False Merge Rate
 ```
+
+Document methodology.
+
+Do not claim statistical significance from a tiny test set.
 
 ---
 
-# 24. Core Application
+# 35. TUI Design
 
-The final application should have approximately five primary destinations:
+Use Textual.
+
+The TUI is a first-class product surface.
+
+Do not treat it as a collection of `print()` statements.
+
+The application should work well at approximately:
 
 ```text
-Dashboard
-Transactions
+120 × 35
+```
+
+and scale reasonably beyond that.
+
+---
+
+# 36. Application Shell
+
+Persistent header:
+
+```text
+PROPERTY INTEL                  NZ COMMERCIAL PROPERTY INTELLIGENCE
+```
+
+Include current dataset/reporting period where useful.
+
+Persistent footer:
+
+```text
+[1] Overview  [2] Transactions  [3] Properties  [4] Quality  [5] Import
+[/] Search    [E] Export                                      [Q] Quit
+```
+
+Exact shortcuts can change if Ponytail or Textual conventions suggest better ones.
+
+Keep shortcuts consistent.
+
+---
+
+# 37. Screen 1 — Market Overview
+
+Create a polished overview.
+
+Example:
+
+```text
+┌─ MARKET OVERVIEW ──────────────────────────────────────────────────┐
+│                                                                   │
+│  Properties      487        Transaction Value       $1.42b        │
+│  Transactions    693        Median Sale Price       $3.84m        │
+│  Median Yield   5.71%       Records to Review          18         │
+│                                                                   │
+├─ TRANSACTION ACTIVITY ─────────────────────────────────────────────┤
+│                                                                   │
+│  60 ┤                                             ╭──╮            │
+│  45 ┤                           ╭────╮      ╭─────╯  ╰╮           │
+│  30 ┤             ╭────╮  ╭────╯    ╰──────╯         ╰─          │
+│  15 ┤      ╭──────╯    ╰──╯                                     │
+│     └────────────────────────────────────────────────             │
+│       2022      2023      2024      2025      2026                │
+│                                                                   │
+├─ SECTOR ACTIVITY ──────────────────────────────────────────────────┤
+│                                                                   │
+│  Service Stations    38%                                          │
+│  QSR                 34%                                          │
+│  Healthcare          28%                                          │
+│                                                                   │
+├─ RECENT TRANSACTIONS ──────────────────────────────────────────────┤
+│ DATE       PROPERTY                  SECTOR       PRICE    YIELD   │
+│ ...                                                               │
+└───────────────────────────────────────────────────────────────────┘
+```
+
+Use actual Textual/Rich components rather than hardcoded ASCII if that produces better behaviour.
+
+---
+
+# 38. Overview Metrics
+
+Show:
+
+```text
 Properties
-Data Quality
-Import
-```
-
-Do not create fifteen routes.
-
-Comparable sales live inside the property experience.
-
----
-
-# 25. Dashboard
-
-The dashboard should immediately communicate the state of the tracked market.
-
-Top metrics:
-
-```text
-Tracked Properties
-
 Transactions
-
 Tracked Transaction Value
-
 Median Sale Price
-
 Median Yield
-
 Records Requiring Review
 ```
 
-Show the reporting period.
+Always show relevant sample sizes for yield where useful.
 
 ---
 
-# 26. Dashboard Charts
+# 39. Market Chart
 
-Include approximately three excellent visualisations.
+Keep charting intentionally modest.
 
-### Transaction Activity
+One good terminal-native transaction activity chart is enough.
 
-Quarter → transaction count.
+Do not spend days building terminal visualization infrastructure.
 
-### Transaction Value
-
-Quarter → aggregate sale value.
-
-### Sector Mix
-
-Service stations / QSR / healthcare.
-
-Optionally include a compact regional breakdown.
-
-Do not create charts merely to fill space.
+If a chart does not look excellent, replace it with a compact trend table or sparkline.
 
 ---
 
-# 27. Recent Transactions
+# 40. Screen 2 — Transactions
 
-The dashboard should include a high-quality recent-transactions table.
-
-Columns:
-
-```text
-Date
-Property
-Region
-Sector
-Sale Price
-Yield
-$/m²
-Source
-```
-
-Rows should link to the relevant property.
-
----
-
-# 28. Transactions Page
-
-This should be one of the strongest screens.
-
-Build an excellent data table.
+Build an excellent searchable table.
 
 Columns:
 
 ```text
 Date
 Address
-City
 Region
 Sector
 Sale Price
+Yield
+$/Land m²
+Buyer
+Seller
+```
+
+Allow horizontal detail views if terminal width is constrained.
+
+---
+
+# 41. Transaction Controls
+
+Support:
+
+```text
+/
+    search
+
+f
+    filters
+
+Enter
+    inspect
+
+s
+    sort
+
+e
+    export
+
+Esc
+    clear/back
+```
+
+Exact shortcuts may be adjusted for consistency.
+
+---
+
+# 42. Transaction Filters
+
+Support:
+
+```text
+Sector
+Region
+Date range
+Sale price range
+Yield range
+```
+
+Do not build a complex query language.
+
+---
+
+# 43. Transaction Detail
+
+Selecting a transaction should show a modal or side panel containing:
+
+```text
+Address
+Date
+Sale Price
+Yield
 Land Area
 Building Area
 $/Land m²
 $/Building m²
-Yield
 Buyer
 Seller
 Source
 ```
 
-Support:
-
-* sorting,
-* filtering,
-* pagination,
-* search,
-* column visibility,
-* CSV export.
-
-Filters:
-
-```text
-Date
-Region
-Sector
-Sale Price
-Yield
-```
-
-Make this table genuinely pleasant to use.
-
 ---
 
-# 29. Properties Page
+# 44. Screen 3 — Properties
 
-Display canonical properties.
-
-Columns:
+Display:
 
 ```text
 Address
@@ -905,101 +1173,76 @@ Last Sale
 Last Sale Price
 ```
 
-Support search/filter/sort.
+Support:
+
+* search,
+* sorting,
+* filtering.
 
 ---
 
-# 30. Property Detail Page
+# 45. Property Detail
 
-This is the showcase page.
-
-Header:
-
-```text
-42 Example Road
-Auckland
-
-SERVICE STATION
-```
-
-Show:
-
-```text
-Owner
-Tenant
-Land Area
-Building Area
-Last Sale
-Last Sale Price
-```
-
----
-
-# 31. Transaction History
-
-Show all tracked transactions for the property.
+Selecting a property opens the primary research view.
 
 Example:
 
 ```text
-2026        $5.2m        5.4%
-2019        $3.8m        6.1%
-2013        $2.9m        —
+╭─ 42 GREAT SOUTH ROAD, AUCKLAND ───────────────────────────────────╮
+│                                                                  │
+│ SERVICE STATION                                                  │
+│                                                                  │
+│ Owner          Example Property Holdings Ltd                     │
+│ Tenant         BP                                                │
+│ Land           2,140 m²                                          │
+│ Building         318 m²                                          │
+│                                                                  │
+├─ TRANSACTION HISTORY ─────────────────────────────────────────────┤
+│                                                                  │
+│ DATE          PRICE           YIELD           $/LAND m²           │
+│ 14 Mar 2026   $5.20m          5.40%              $2,430           │
+│ 08 Nov 2019   $3.85m          6.10%              $1,799           │
+│                                                                  │
+├─ COMPARABLE SALES ────────────────────────────────────────────────┤
+│                                                                  │
+│ PROPERTY                  DIST     PRICE     YIELD      MATCH      │
+│ 18 Example Rd             1.4km    $4.9m     5.6%        94%      │
+│ 72 Example St             2.8km    $5.4m     5.2%        91%      │
+│ 91 Example Ave            4.1km    $4.7m     5.8%        87%      │
+│                                                                  │
+│ [C] Comparables     [S] Source     [E] Export     [Esc] Back      │
+╰──────────────────────────────────────────────────────────────────╯
 ```
-
-Use a restrained timeline/table.
 
 ---
 
-# 32. Source Information
+# 46. Comparable Sales
 
-Clearly display where information came from.
+This is the second major analytical feature.
 
-Example:
+Given a property, rank historical transactions using:
 
 ```text
-Source
-Public transaction record
-
-Retrieved
-14 Sep 2026
+sector
+geographic proximity
+land-area similarity
+building-area similarity
+transaction recency
 ```
 
-Keep this simple.
-
 ---
 
-# 33. Comparable Sales Engine
+# 47. Comparable Distance
 
-Given a property, rank similar historical transactions.
-
-This is the second flagship technical feature.
-
-Use factors such as:
-
-* sector,
-* geographic distance,
-* land area,
-* building area,
-* transaction recency.
-
----
-
-# 34. Comparable Distance
-
-Construct an interpretable normalized distance:
+Use an interpretable distance:
 
 $$
 D(i,j)
 =
-w_gD_g
-+
-w_lD_l
-+
-w_bD_b
-+
-w_tD_t
-+
+w_gD_g+
+w_lD_l+
+w_bD_b+
+w_tD_t+
 w_sD_s
 $$
 
@@ -1009,24 +1252,28 @@ where:
 Dg = geographic distance
 Dl = land-area difference
 Db = building-area difference
-Dt = transaction age
-Ds = sector mismatch penalty
+Dt = transaction recency
+Ds = sector mismatch
 ```
 
-Convert into a user-friendly similarity measure.
+Normalize terms appropriately.
 
-Document exactly how this works.
+Document the calculation.
 
 ---
 
-# 35. Comparable Results
+# 48. Comparable Output
 
-Return the top five by default.
-
-Display:
+Default:
 
 ```text
-Comparable
+Top 5
+```
+
+Show:
+
+```text
+Address
 Distance
 Sale Date
 Sale Price
@@ -1038,127 +1285,223 @@ Similarity
 
 ---
 
-# 36. Explain Comparables
+# 49. Comparable Explanation
 
-Do not display only a score.
-
-Example:
-
-```text
-93% Similar
-
-✓ Same sector
-✓ 1.4 km away
-✓ Land area within 5%
-✓ Building area within 8%
-✓ Sold 6 months ago
-```
-
-This makes the analytics much more credible.
-
----
-
-# 37. Comparable Map
-
-OPTIONAL.
-
-If implementation is straightforward and visually excellent, show:
-
-```text
-● Subject property
-○ Comparable 1
-○ Comparable 2
-...
-```
-
-Do not retain a mediocre map simply because maps look impressive.
-
-Quality > feature count.
-
----
-
-# 38. Data Quality Page
-
-This is highly relevant to the project's purpose.
-
-Top metrics:
-
-```text
-Potential Duplicates
-Validation Warnings
-Missing Owner
-Missing Tenant
-Missing Coordinates
-Suspicious Transactions
-```
-
----
-
-# 39. Review Queue
-
-Below the metrics, create a review queue.
+Selecting a comparable should explain the match.
 
 Example:
 
 ```text
-TYPE                 RECORD                  ISSUE
-
-Duplicate            123 Queen St            96% duplicate candidate
-Validation           42 Example Rd           Yield = 24.7%
-Missing Data         8 High Street           Owner unavailable
-Suspicious Value     17 Example Ave          Sale price unusually high
+╭─ WHY THIS PROPERTY? ──────────────────────────────────────────────╮
+│                                                                  │
+│  Match score                                          94%         │
+│                                                                  │
+│  Sector                     Same                     ✓            │
+│  Distance                   1.4 km                   ✓            │
+│  Land area difference       4.8%                     ✓            │
+│  Building area difference   7.1%                     ✓            │
+│  Transaction age            6 months                 ✓            │
+│                                                                  │
+╰──────────────────────────────────────────────────────────────────╯
 ```
 
-Clicking an item should open the relevant review context.
+Do not provide unexplained scores.
 
 ---
 
-# 40. Market Analytics
+# 50. Screen 4 — Data Quality
 
-Calculate:
+Create:
+
+```text
+╭─ DATA QUALITY ────────────────────────────────────────────────────╮
+│                                                                  │
+│ Potential Duplicates       8       Missing Owner          14      │
+│ Validation Warnings       12       Missing Tenant         21      │
+│ Suspicious Transactions    4       Import Errors           2      │
+│                                                                  │
+├─ REVIEW QUEUE ────────────────────────────────────────────────────┤
+│                                                                  │
+│ TYPE          PROPERTY               ISSUE                        │
+│ Duplicate     123 Queen St           96% duplicate candidate      │
+│ Validation    42 Example Rd          Yield 24.7%                  │
+│ Missing       8 High St              Owner unavailable            │
+│ Suspicious    17 Example Ave         Unusual $/m²                 │
+│                                                                  │
+╰──────────────────────────────────────────────────────────────────╯
+```
+
+---
+
+# 51. Duplicate Review
+
+This should be one of the most polished interactions in the application.
+
+Example:
+
+```text
+╭─ POTENTIAL DUPLICATE ─────────────────────────────────────────────╮
+│                                                                  │
+│ SOURCE OBSERVATION             EXISTING PROPERTY                  │
+│                                                                  │
+│ 123 Queen Street              123 Queen St                        │
+│ Auckland CBD                  Auckland CBD                        │
+│ Service Station              Service Station                     │
+│ 1,247 m²                     1,250 m²                            │
+│ BP                            BP                                  │
+│                                                                  │
+├─ MATCH EVIDENCE ──────────────────────────────────────────────────┤
+│                                                                  │
+│ Address             ███████████████████░       98%                │
+│ Land Area           ███████████████████░       99%                │
+│ Tenant              ████████████████████      100%                │
+│                                                                  │
+│ Overall                                     96% HIGH              │
+│                                                                  │
+│               [M] Merge        [S] Separate                       │
+╰──────────────────────────────────────────────────────────────────╯
+```
+
+Actions must actually modify the underlying data/review state.
+
+---
+
+# 52. Screen 5 — Import
+
+The import screen should support:
+
+```text
+Choose File
+    ↓
+Map Columns
+    ↓
+Preview 10 rows
+    ↓
+Validate
+    ↓
+Import Summary
+```
+
+Use modal steps or a focused screen.
+
+Do not build a complicated wizard framework.
+
+---
+
+# 53. Import Summary
+
+After import show:
+
+```text
+IMPORT COMPLETE
+
+Rows received                  247
+Imported                       221
+Matched existing properties     14
+Requires review                  8
+Rejected                         4
+
+[View Review Queue]       [Done]
+```
+
+---
+
+# 54. Global Search
+
+`/` should open search.
+
+Search:
+
+```text
+address
+owner
+tenant
+buyer
+seller
+```
+
+Results should be grouped.
+
+Example:
+
+```text
+PROPERTIES
+
+42 Great South Rd
+18 Queen St
+
+OWNERS
+
+Example Property Holdings Ltd
+
+TENANTS
+
+BP
+```
+
+Keyboard navigation should be excellent.
+
+---
+
+# 55. Market Analytics
+
+Implement only useful metrics:
 
 ```text
 transaction count
-transaction value
+tracked transaction value
 median sale price
 median yield
-median price/land m²
-median price/building m²
+median $/land m²
+median $/building m²
 ```
 
-Segment by:
+Support grouping by:
 
-* quarter,
-* region,
-* sector.
+```text
+quarter
+sector
+region
+```
 
-Use medians for skewed variables where appropriate.
-
-Always expose sample sizes where meaningful.
+Do not add predictive modelling.
 
 ---
 
-# 41. Excel Market Report
+# 56. Statistical Integrity
 
-This is a mandatory flagship feature.
+Follow:
+
+1. Missing data is NULL, not zero.
+2. Synthetic data is clearly identified.
+3. Medians are preferred for heavily skewed metrics.
+4. Yield statistics expose sample size where useful.
+5. Do not invent missing values.
+6. Do not claim dataset coverage represents the whole NZ market.
+7. Derived values are distinguishable from source values.
+8. Suspicious values are flagged, not automatically declared wrong.
+
+---
+
+# 57. Excel Export
+
+Excel is a flagship output.
+
+Use `openpyxl`.
 
 Generate:
 
 ```text
-NZ_Commercial_Property_Market_Report.xlsx
+data/exports/NZ_Commercial_Property_Market_Report.xlsx
 ```
 
-using `openpyxl`.
-
-The workbook should be visually excellent.
-
-It should not resemble a dataframe dump.
+Allow the destination to be overridden.
 
 ---
 
-# 42. Excel Sheets
+# 58. Workbook
 
-Use:
+Keep it to five excellent sheets:
 
 ```text
 01 Executive Summary
@@ -1168,13 +1511,9 @@ Use:
 05 Data Quality
 ```
 
-Only five sheets.
-
-Make them excellent.
-
 ---
 
-# 43. Executive Summary
+# 59. Executive Summary
 
 Include:
 
@@ -1182,25 +1521,21 @@ Include:
 Reporting Period
 Properties Tracked
 Transactions
-Transaction Value
+Tracked Transaction Value
 Median Sale Price
 Median Yield
 Records Requiring Review
 ```
 
-Add:
+Add useful charts.
 
-* transaction activity chart,
-* transaction value chart,
-* sector breakdown.
+Do not overcrowd the sheet.
 
 ---
 
-# 44. Transactions Sheet
+# 60. Transactions
 
-Create a proper Excel table.
-
-Columns:
+Create a proper Excel table containing:
 
 ```text
 Date
@@ -1219,28 +1554,32 @@ Seller
 Source
 ```
 
-Use:
+Include:
 
+* autofilter,
 * frozen header,
-* filters,
-* professional widths,
-* currency formats,
-* percentages,
-* date formats,
-* alternating rows where appropriate.
+* sensible widths,
+* currency formatting,
+* percentage formatting,
+* date formatting.
 
 ---
 
-# 45. Comparable Sales Sheet
+# 61. Comparable Sales
 
-Allow export for a selected property.
-
-Include:
+When exporting from a selected property, include:
 
 ```text
-Subject Property
+SUBJECT PROPERTY
 
-Comparable Rank
+Address
+Sector
+Land Area
+Building Area
+
+COMPARABLES
+
+Rank
 Address
 Distance
 Sale Date
@@ -1249,440 +1588,516 @@ Land Area
 Building Area
 Yield
 Similarity
-Match Explanation
+Why Matched
 ```
 
 ---
 
-# 46. Sector Analysis
+# 62. Sector Analysis
 
-Show:
+Include:
 
 ```text
 Sector
+Properties
 Transactions
 Transaction Value
 Median Sale Price
 Median Yield
-Median $/m²
+Median $/Land m²
 ```
 
 Add one or two useful charts.
 
 ---
 
-# 47. Data Quality Sheet
+# 63. Data Quality
 
 Include:
 
 ```text
 Potential duplicates
 Validation warnings
-Missing information
-Suspicious records
+Missing owner
+Missing tenant
+Suspicious transactions
+Import errors
 ```
 
-Use conditional formatting intelligently.
+Use tasteful conditional formatting.
 
 ---
 
-# 48. Excel Quality
+# 64. Excel Standard
 
-Manually inspect the generated workbook.
+The workbook must look professionally prepared.
 
 Verify:
 
-* formatting,
-* widths,
-* row heights,
-* frozen panes,
-* filters,
-* tables,
-* charts,
-* number formats,
-* dates,
-* percentages,
-* print readability,
-* source notes.
-
-This feature should visibly demonstrate advanced Excel capability.
-
----
-
-# 49. Demo Dataset
-
-The project must run without proprietary data.
-
-Create approximately:
-
 ```text
-500 canonical properties
-700 transactions
-3 sectors
-multiple NZ regions
-10 years of history
+column widths
+row heights
+freeze panes
+filters
+tables
+chart titles
+number formats
+currency
+percentages
+dates
+alignment
+conditional formatting
+print readability
 ```
 
-Generate additional messy observations so there are approximately:
+Do not produce a pandas dump with colours added.
+
+---
+
+# 65. Keyboard-First UX
+
+The application should be genuinely efficient without a mouse.
+
+Important actions should have keyboard shortcuts.
+
+Examples:
 
 ```text
-800–1,000 raw observations
+1–5        Navigation
+/          Search
+f          Filter
+Enter      Open/select
+Esc        Back/close
+e          Export
+r          Review
+?          Help
+q          Quit
 ```
 
-Include:
+Avoid shortcut collisions.
 
-* duplicate addresses,
-* different company spellings,
-* missing fields,
-* malformed currency,
-* conflicting values,
-* suspicious yields,
-* repeated property transactions,
-* different date formats.
-
-The data pipeline needs interesting problems to solve.
+Show relevant shortcuts in the footer.
 
 ---
 
-# 50. Synthetic Data
+# 66. Command Palette
 
-All synthetic/demo information must be clearly marked:
+If Textual makes this straightforward, add:
 
 ```text
-DEMO DATA — SYNTHETIC
+Ctrl+P
 ```
 
-Do not imply that synthetic statistics describe the actual NZ market.
+or an appropriate shortcut for a command palette.
 
----
-
-# 51. Optional Real Data
-
-The architecture should support legally obtained public information.
-
-Do not:
-
-* bypass authentication,
-* circumvent CAPTCHAs,
-* ignore source terms,
-* scrape prohibited sources.
-
-Document potential data sources separately without making them necessary to run the project.
-
----
-
-# 52. API
-
-Keep the API small.
-
-Implement approximately:
+Commands could include:
 
 ```text
-GET  /api/dashboard
-GET  /api/properties
-GET  /api/properties/{id}
-GET  /api/properties/{id}/comparables
-
-GET  /api/transactions
-
-GET  /api/data-quality
-GET  /api/data-quality/duplicates
-
-POST /api/import
-POST /api/duplicates/{id}/resolve
-
-GET  /api/reports/market.xlsx
-GET  /api/reports/transactions.csv
-GET  /api/properties/{id}/comparables.xlsx
+Go to Overview
+Search Properties
+Import File
+Review Duplicates
+Export Market Report
+Open Help
 ```
 
-Do not build APIs that have no frontend or reporting use case.
+This is optional but valuable if implemented cleanly.
 
 ---
 
-# 53. Testing
+# 67. Help
+
+`?` should display a polished shortcut/help overlay.
+
+Do not require the README to understand basic navigation.
+
+---
+
+# 68. TUI Aesthetic
+
+Use Ponytail and Impeccable heavily.
+
+The interface should be:
+
+```text
+restrained
+dense
+fast
+precise
+premium
+consistent
+```
+
+Avoid rainbow terminal styling.
+
+Use a restrained palette.
+
+Use colour semantically:
+
+* selection,
+* warning,
+* error,
+* success,
+* muted metadata.
+
+The application should still be understandable in reduced-colour environments where practical.
+
+---
+
+# 69. Borders
+
+Use borders intentionally.
+
+Do not put every piece of information in its own bordered box.
+
+Use grouping, whitespace and alignment.
+
+---
+
+# 70. Financial Numbers
+
+Format consistently.
+
+Examples:
+
+```text
+$1.42b
+$5.20m
+$850k
+5.40%
+1,240 m²
+$2,430/m²
+```
+
+Use tabular alignment where possible.
+
+---
+
+# 71. Empty States
+
+Examples:
+
+```text
+No transactions match the current filters.
+
+No duplicate candidates require review.
+
+No comparable transactions satisfy the current criteria.
+
+No import has been run in this session.
+```
+
+Do not show blank panels.
+
+---
+
+# 72. Error States
+
+Errors should be actionable.
+
+Example:
+
+```text
+Could not read "transactions.xlsx".
+
+The workbook does not contain a readable worksheet.
+
+[Choose Another File]
+```
+
+Avoid stack traces in normal UI.
+
+Log technical details separately where useful.
+
+---
+
+# 73. Performance
+
+For the bundled dataset, target:
+
+```text
+startup                         < 2 seconds
+property search                 effectively instant
+filtering                       effectively instant
+property detail                 effectively instant
+comparable ranking              < 500 ms
+Excel report                    < 5 seconds
+```
+
+These are targets, not reasons to introduce unnecessary complexity.
+
+---
+
+# 74. Tests
 
 Testing is mandatory.
 
-## Cleaning
+---
+
+# 75. Parsing Tests
 
 Test:
 
 ```text
-addresses
 currency
-areas
+area
 dates
+addresses
 company names
 missing values
 ```
 
-## Validation
-
-Test:
-
-```text
-invalid prices
-future dates
-invalid yields
-invalid areas
-suspicious records
-```
-
-## Entity Resolution
-
-Test:
-
-```text
-exact duplicates
-abbreviated addresses
-company spelling differences
-near duplicates
-different properties with similar names
-unit-number differences
-false-positive traps
-```
-
-## Analytics
-
-Test:
-
-```text
-transaction value
-medians
-yield
-price/m²
-quarterly aggregation
-sector aggregation
-```
-
-## Comparables
-
-Test:
-
-```text
-distance
-area normalization
-recency
-sector penalties
-ranking
-explanations
-```
-
-## API
-
-Test important routes and filtering.
+Include ugly inputs.
 
 ---
 
-# 54. End-to-End Test
+# 76. Validation Tests
 
-Implement at least one test covering:
+Test:
+
+```text
+negative price
+zero price
+future transaction
+invalid yield
+extreme yield
+invalid area
+missing optional fields
+```
+
+---
+
+# 77. Entity Resolution Tests
+
+Test:
+
+```text
+123 Queen Street
+123 Queen St
+→ MATCH
+```
+
+and:
+
+```text
+12 Queen Street
+123 Queen Street
+→ DO NOT MATCH
+```
+
+and:
+
+```text
+Unit 1, 40 Example Rd
+Unit 2, 40 Example Rd
+→ DO NOT AUTOMATICALLY MATCH
+```
+
+Also test missing fields.
+
+---
+
+# 78. Comparable Tests
+
+Test:
+
+```text
+geographic distance
+area differences
+recency
+sector penalty
+ranking
+similarity conversion
+explanation generation
+```
+
+---
+
+# 79. Analytics Tests
+
+Test:
+
+```text
+transaction count
+transaction value
+median sale price
+median yield
+$/m²
+quarter aggregation
+sector aggregation
+```
+
+---
+
+# 80. Excel Tests
+
+Verify:
+
+```text
+file created
+expected sheets
+headers
+row counts
+number formats
+tables
+frozen panes
+```
+
+Do not attempt to test every visual characteristic programmatically.
+
+Manually inspect the workbook during final QA.
+
+---
+
+# 81. End-to-End Test
+
+Test the central workflow:
 
 ```text
 CSV
  ↓
-IMPORT
+READ
  ↓
 NORMALISE
  ↓
 VALIDATE
  ↓
-MATCH
+ENTITY RESOLUTION
  ↓
-DATABASE
+SQLITE
  ↓
-PROPERTY
+PROPERTY QUERY
  ↓
 COMPARABLES
  ↓
 EXCEL
 ```
 
-This is the project's central workflow.
+This is more important than achieving an arbitrary coverage percentage.
 
 ---
 
-# 55. Visual Design
+# 82. No Docker
 
-Use `impeccable` aggressively here.
+Explicit requirement:
 
-The visual language should be:
+**DO NOT ADD DOCKER.**
 
-```text
-professional
-analytical
-precise
-restrained
-information-dense
-premium
+The local setup should be simpler than Docker.
+
+Target:
+
+```bash
+git clone <repo>
+cd property-intel
+uv sync
+uv run property-intel
 ```
 
-Do not make it look like a university assignment.
+Seed/demo setup should be automatic or one obvious command.
 
-Do not make it look like an AI startup landing page.
+For example:
 
----
-
-# 56. Colour
-
-Use a restrained neutral base with one sophisticated accent.
-
-Do not blindly imitate CBRE branding.
-
-The project should have its own identity.
-
-Ensure:
-
-* WCAG-appropriate contrast,
-* meaningful status colours,
-* charts remain readable,
-* colour is never the only means of communicating status.
-
----
-
-# 57. Typography
-
-Typography is important.
-
-Use a professional sans-serif family available through the chosen frontend setup.
-
-Numerical data should align cleanly.
-
-Consider tabular numerals for financial tables.
-
-Use hierarchy through:
-
-* size,
-* weight,
-* spacing,
-
-rather than decorative elements.
-
----
-
-# 58. Number Formatting
-
-Be meticulous.
-
-Use:
-
-```text
-$4.2m
-$850k
-5.42%
-1,240 m²
-$3,410/m²
+```bash
+uv run property-intel --demo
 ```
 
-where appropriate.
-
-Full precision should remain available when needed.
-
-Dates should follow a consistent NZ-friendly format.
-
 ---
 
-# 59. Responsive Behaviour
+# 83. CLI
 
-Desktop is the primary target because this is an analyst application.
+Support useful commands such as:
 
-Still ensure:
-
-* laptop layouts work,
-* tables degrade reasonably,
-* no major overflow,
-* navigation remains usable.
-
-Do not spend excessive time optimizing tiny mobile screens.
-
----
-
-# 60. Accessibility
-
-Include:
-
-* keyboard navigation,
-* focus states,
-* semantic HTML,
-* accessible labels,
-* chart alternatives/tooltips,
-* sufficient contrast.
-
----
-
-# 61. Loading / Empty / Error States
-
-Every major screen should have intentional states.
-
-Examples:
-
-```text
-No transactions match these filters.
-
-No comparable sales satisfy the current criteria.
-
-This import contains 14 records requiring review.
-
-Market report could not be generated.
+```bash
+property-intel
+property-intel --demo
+property-intel import transactions.xlsx
+property-intel export
 ```
 
-Avoid blank screens.
+Do not turn this into a giant CLI framework.
+
+The TUI remains the primary interface.
 
 ---
 
-# 62. Implementation Phases
+# 84. Implementation Phases
+
+Build sequentially.
+
+---
 
 ## Phase 1 — Foundation
 
-Build:
+Implement:
 
-* repository structure,
-* backend,
-* frontend,
-* PostgreSQL,
-* Docker,
-* migrations,
-* test infrastructure.
+```text
+pyproject
+package structure
+Textual app
+SQLite connection
+SQLAlchemy
+Alembic
+Ruff
+mypy
+pytest
+CLI entry point
+```
 
-Verify everything starts.
+Create a minimal functioning TUI shell.
+
+Run tests.
+
+Run Ponytail/Uncodixfy checks where relevant.
 
 COMMIT.
+
+PUSH if GitHub is configured.
 
 ---
 
-## Phase 2 — Core Data Model
+## Phase 2 — Data Model + Demo Data
 
 Implement:
 
-* Property
-* Transaction
-* Source
-* RawObservation
-* ImportJob
+```text
+Property
+Transaction
+Source
+RawObservation
+ImportJob
+```
 
-Add migrations and tests.
+Create deterministic synthetic generator.
+
+Seed database.
+
+Verify realistic messy observations.
 
 COMMIT.
+
+PUSH.
 
 ---
 
-## Phase 3 — Data Pipeline
+## Phase 3 — Cleaning + Validation
 
 Implement:
 
-* CSV/XLSX ingestion,
-* column mapping,
-* address normalization,
-* company normalization,
-* currency parsing,
-* area parsing,
-* date parsing,
-* validation.
+```text
+address normalization
+company normalization
+currency parser
+area parser
+date parser
+validation rules
+```
 
-Test thoroughly.
+Add comprehensive tests.
 
 COMMIT.
+
+PUSH.
 
 ---
 
@@ -1690,520 +2105,708 @@ COMMIT.
 
 Implement:
 
-* matching features,
-* scoring,
-* thresholds,
-* labelled evaluation set,
-* duplicate review,
-* merge/separate actions.
+```text
+candidate generation
+matching signals
+scoring
+thresholds
+review states
+labelled evaluation dataset
+metrics
+```
 
-Measure performance.
+Test false merges carefully.
+
+Document methodology.
 
 COMMIT.
 
+PUSH.
+
 ---
 
-## Phase 5 — Core Analyst UI
+## Phase 5 — Core TUI
 
 Build:
 
-* application shell,
-* dashboard,
-* transactions table,
-* properties table,
-* property detail.
+```text
+application shell
+Overview
+Transactions
+Properties
+Property Detail
+global search
+keyboard navigation
+help
+```
 
-Apply `impeccable` and `ponytail`.
+Apply Ponytail.
+
+Apply Impeccable.
+
+Actually run the application and inspect it visually.
 
 COMMIT.
+
+PUSH.
 
 ---
 
-## Phase 6 — Market Analytics
+## Phase 6 — Comparable Sales
 
 Implement:
 
-* headline metrics,
-* quarterly transaction activity,
-* transaction value,
-* sector breakdown,
-* regional filtering.
+```text
+distance function
+ranking
+top-five results
+match explanations
+property integration
+```
+
+Test methodology.
 
 COMMIT.
+
+PUSH.
 
 ---
 
-## Phase 7 — Comparable Sales
+## Phase 7 — Data Quality
 
 Implement:
 
-* comparable distance,
-* ranking,
-* explanation generation,
-* UI.
+```text
+quality summary
+review queue
+duplicate review
+merge/separate
+validation review
+```
 
-Optional map only if excellent.
+Make duplicate review exceptional.
 
 COMMIT.
+
+PUSH.
 
 ---
 
-## Phase 8 — Data Quality
+## Phase 8 — Import
 
 Implement:
 
-* quality metrics,
-* review queue,
-* validation issues,
-* duplicate review integration.
+```text
+CSV
+XLSX
+column mapping
+preview
+validation
+duplicate checking
+import summary
+```
+
+Test the complete workflow.
 
 COMMIT.
+
+PUSH.
 
 ---
 
 ## Phase 9 — Excel
 
-Build the complete five-sheet workbook.
+Implement the five-sheet workbook.
 
-Manually inspect it.
+Manually inspect the generated file.
+
+Improve until it genuinely looks professional.
 
 COMMIT.
 
+PUSH.
+
 ---
 
-## Phase 10 — Polish
+## Phase 10 — Product Polish
 
 STOP ADDING FEATURES.
 
-Perform:
+Run:
 
-* impeccable review,
-* ponytail review,
-* uncodixfy review,
-* accessibility review,
-* responsive review,
-* error-state review,
-* performance review.
+```text
+Ponytail review
+Impeccable review
+Uncodixfy review
+keyboard UX review
+error-state review
+empty-state review
+performance review
+```
 
-Fix everything material.
+Inspect every screen in the running TUI.
+
+Fix inconsistencies.
 
 COMMIT.
+
+PUSH.
 
 ---
 
-## Phase 11 — Documentation & GitHub Presentation
+## Phase 11 — README + Screenshots
 
-Create:
+Do not treat this as optional documentation work.
 
-* screenshots,
-* diagrams,
-* methodology,
-* architecture documentation,
-* final README.
+This is part of the portfolio deliverable.
+
+Capture screenshots.
+
+Create diagrams.
+
+Write final README.
 
 COMMIT.
+
+PUSH.
 
 ---
 
 ## Phase 12 — Final Verification
 
-Perform clean install.
+From a clean environment:
 
-Run:
-
-```text
-backend tests
-frontend tests
-lint
-typecheck
-production build
-database migrations
-seed
-Excel generation
+```bash
+uv sync
+uv run pytest
+uv run ruff check .
+uv run mypy src
+uv run property-intel --demo
 ```
 
-Verify the complete demo workflow.
+Also verify:
 
-Make final cleanup commit.
+```text
+search
+filters
+property navigation
+comparables
+duplicate review
+CSV import
+XLSX import
+Excel export
+```
 
-Push to GitHub if configured.
+Fix all material issues.
+
+Final commit.
+
+Final push.
 
 ---
 
-# 63. Git Discipline
+# 85. Git Discipline
 
-Git history is part of the portfolio.
+Git/GitHub history is part of the project.
 
-Commit regularly throughout development.
+Commit regularly.
 
-Do not produce one enormous commit.
+Do not create one giant commit at the end.
 
-Before each commit:
+Before every commit:
 
-```text
+```bash
 git status
 git diff
 ```
 
-Run relevant tests.
+Then:
 
-Use meaningful conventional commit messages.
+1. inspect changes,
+2. remove accidental files,
+3. ensure no credentials exist,
+4. run relevant tests,
+5. commit one coherent unit of work.
 
-Examples:
+---
+
+# 86. Commit Style
+
+Use clear commits such as:
 
 ```text
-chore: initialise application infrastructure
+chore: initialise property intel TUI
 
-feat: add property transaction data model
+feat: add commercial property data model
 
-feat: implement transaction ingestion pipeline
+feat: generate synthetic transaction dataset
 
-feat: add commercial property validation rules
+feat: add property data normalisation
 
 feat: implement property entity resolution
 
-feat: build market intelligence dashboard
+feat: build market overview
 
-feat: add comparable sales analysis
+feat: add transaction and property explorers
+
+feat: implement comparable sales ranking
 
 feat: add data quality review workflow
 
+feat: support CSV and Excel imports
+
 feat: generate Excel market intelligence report
 
-style: polish analyst interface
+style: polish terminal interface
 
-refactor: simplify data pipeline implementation
+refactor: simplify property matching pipeline
 
-docs: add architecture and methodology
+test: add end-to-end import workflow
+
+docs: document entity resolution methodology
 
 docs: complete portfolio README
 ```
 
-If a GitHub remote is configured and authentication permits it, push milestones regularly.
-
-Never claim a push succeeded unless it actually did.
-
-Never force-push unless explicitly required.
-
-Never commit:
+Avoid meaningless commits such as:
 
 ```text
-.env
-credentials
-API keys
-database dumps
-node_modules
-temporary files
+updates
+fix stuff
+changes
+final
+final2
 ```
 
 ---
 
-# 64. Implementation Plan
+# 87. GitHub Pushes
 
-Create:
+If a GitHub remote exists and authentication is available:
+
+**push regularly after stable milestones.**
+
+Do not wait until the entire project is complete.
+
+Suggested:
+
+```text
+Phase 1 → commit + push
+Phase 2 → commit + push
+Phase 3 → commit + push
+...
+```
+
+Never force-push unless explicitly instructed.
+
+Never overwrite unrelated work.
+
+Never claim a push succeeded without verifying it.
+
+---
+
+# 88. .gitignore
+
+At minimum exclude:
+
+```text
+.venv/
+__pycache__/
+*.pyc
+.env
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+data/property_intel.db
+```
+
+Decide deliberately whether generated exports belong in Git.
+
+Usually exclude routine exports while optionally retaining one polished example report if useful for the portfolio.
+
+---
+
+# 89. IMPLEMENTATION_PLAN.md
+
+Before substantial implementation, create:
 
 ```text
 IMPLEMENTATION_PLAN.md
 ```
 
-before substantial coding.
-
-Translate every phase into checkboxes.
-
-Keep it current.
+Translate this specification into checkboxes.
 
 Example:
 
-```markdown
-## Phase 3 — Data Pipeline
+```text
+## Phase 4 — Entity Resolution
 
-- [x] CSV reader
-- [x] XLSX reader
-- [x] column mapper
-- [x] currency parser
-- [x] area parser
-- [ ] date ambiguity handling
-- [ ] validation summary
+- [x] address similarity
+- [x] land-area similarity
+- [x] tenant similarity
+- [ ] geographic similarity
+- [ ] candidate generation
+- [ ] review thresholds
+- [ ] evaluation dataset
+- [ ] precision/recall report
 ```
 
-Never mark incomplete functionality as complete.
+Keep it accurate.
+
+Never mark incomplete work complete.
 
 ---
 
-# 65. Quality Review After Every Phase
+# 90. Quality Gate After Every Phase
 
-After each phase perform:
+Before committing a phase, ask:
 
 ### Functional
 
-Does it work?
+Does it actually work?
 
-### Tests
+### Tested
 
-Did relevant tests actually pass?
-
-### Engineering
-
-Is this the simplest robust implementation?
-
-### Uncodixfy
-
-Does anything look generated, bloated or unnecessarily abstract?
-
-### Impeccable
-
-For UI work: does it actually look excellent when rendered?
-
-### Ponytail
-
-Apply relevant Ponytail requirements.
+Did relevant tests actually run?
 
 ### Scope
 
-Did anything creep into the project that isn't contributing to the central workflow?
+Did we introduce anything unnecessary?
 
-Remove unnecessary complexity.
+### Code
+
+Is this the simplest robust implementation?
+
+### Ponytail
+
+Have applicable Ponytail instructions been followed?
+
+### Impeccable
+
+If visual, have we inspected the rendered TUI?
+
+### Uncodixfy
+
+Does the implementation contain generated-looking bloat?
+
+### Recruiter
+
+Does this improve the project's story?
 
 Then commit.
 
 ---
 
-# 66. Recruiter Demo
+# 91. Recruiter Demo
 
-Design everything around a 90-second demonstration.
-
-## 0–15 seconds — Dashboard
-
-Show:
-
-```text
-500 properties
-700 transactions
-$X tracked transaction value
-median yield
-transaction trend
-sector breakdown
-```
-
-Explain that the demo uses synthetic data.
+Design the entire product around a **90-second demonstration**.
 
 ---
 
-## 15–35 seconds — Messy Data
+## 0–15 sec — Overview
 
-Open the import/data-quality workflow.
+Run:
 
-Show:
-
-```text
-123 Queen Street, Auckland
-123 QUEEN ST
-123 Queen St, Auckland CBD
+```bash
+property-intel --demo
 ```
 
-Explain:
+Immediately show:
 
-> The system standardises incoming data and identifies records that probably refer to the same commercial property.
+```text
+487 properties
+693 transactions
+$1.42b tracked transaction value
+5.71% median yield
+18 records requiring review
+```
 
-Show the explainable 96% duplicate match.
+Say clearly that the bundled data is synthetic.
 
 ---
 
-## 35–55 seconds — Property Intelligence
+## 15–35 sec — Data Quality
 
-Open the canonical property.
+Open:
+
+```text
+Data Quality
+→ Potential Duplicates
+```
 
 Show:
 
 ```text
-property information
+123 Queen Street
+123 Queen St
+```
+
+and the explainable 96% match.
+
+Demonstrate merge/review.
+
+---
+
+## 35–55 sec — Property Research
+
+Search:
+
+```text
+/
+```
+
+Find a service-station property.
+
+Show:
+
+```text
 owner
 tenant
+land area
 transaction history
 source
 ```
 
 ---
 
-## 55–75 seconds — Comparable Sales
+## 55–75 sec — Comparables
+
+Open comparable sales.
 
 Show:
 
 ```text
-five comparable transactions
-similarity scores
+top five comparables
 distance
-area difference
-recency
-match explanation
+sale price
+yield
+similarity
 ```
 
-Explain that the system ranks comparables using transparent characteristics rather than a black-box model.
+Open one and demonstrate why it matched.
 
 ---
 
-## 75–90 seconds — Excel
+## 75–90 sec — Excel
 
-Click:
+Press:
 
 ```text
-Export Market Report
+E
 ```
 
-Open the professional Excel workbook.
+Generate the professional Excel report.
 
-Finish.
+Show the workbook.
 
-The entire project's value should be understandable from this demonstration.
+Done.
 
 ---
 
-# 67. Screenshots
+# 92. Screenshots
 
-Once the application is finished and polished, capture real screenshots.
+Once the application is completely polished, capture real terminal screenshots.
 
 Create:
 
 ```text
-docs/screenshots/dashboard.png
-docs/screenshots/transactions.png
-docs/screenshots/property-detail.png
-docs/screenshots/comparables.png
-docs/screenshots/entity-resolution.png
-docs/screenshots/data-quality.png
-docs/screenshots/excel-report.png
+docs/screenshots/
+├── overview.png
+├── transactions.png
+├── property-detail.png
+├── comparables.png
+├── duplicate-review.png
+├── data-quality.png
+├── import.png
+└── excel-report.png
 ```
 
-Do not capture screenshots before the UI polish phase.
+Do not take final screenshots before the polish phase.
+
+Use consistent terminal dimensions.
+
+Recommended:
+
+```text
+120 × 35
+```
+
+or another size that displays the UI particularly well.
+
+Use a clean terminal environment.
+
+Avoid unrelated shell/browser clutter.
 
 Do not fabricate screenshots.
 
-Use representative populated states.
+---
 
-Keep dimensions consistent.
+# 93. Optional Demo GIF
 
-Avoid browser/debug clutter where possible.
+If tooling permits, create a short high-quality terminal recording showing:
+
+```text
+launch
+→ search
+→ property
+→ comparables
+→ duplicate review
+→ Excel export
+```
+
+Keep it short.
+
+Approximately:
+
+```text
+15–30 seconds
+```
+
+Do not add a huge slow GIF that makes the README unpleasant.
+
+This is optional.
 
 ---
 
-# 68. README
+# 94. README Is A Product Surface
 
-The README is a major part of the finished product.
+The README should be **exceptionally good**.
 
-It should be visually excellent and highly professional.
+A recruiter should understand the project within approximately 20 seconds of opening GitHub.
 
-A recruiter opening the repository should understand the project in **20–30 seconds**.
+Do not produce a giant wall of text.
 
-Do not write a generic generated README.
+Do not produce an obviously AI-generated README.
+
+Use screenshots heavily.
 
 ---
 
-# 69. README Opening
+# 95. README Hero
+
+Start approximately:
+
+```markdown
+# Property Intel
+
+**Terminal-native market intelligence for commercial property research.**
+
+Property Intel transforms messy commercial-property transaction
+data into a clean, searchable database with entity resolution,
+comparable-sales analysis, data-quality review and professional
+Excel reporting.
+
+[large overview screenshot]
+
+`CSV/XLSX → Clean → Validate → Resolve → Analyse → Export`
+```
+
+Then move quickly into the product.
+
+---
+
+# 96. README Structure
 
 Use approximately:
 
-```markdown
-# NZ Commercial Property Intelligence
-
-A market-intelligence platform that transforms messy commercial
-property transaction data into a clean, auditable database with
-entity resolution, comparable-sales analysis and professional
-Excel reporting.
-
-[HERO SCREENSHOT]
-```
-
-Then provide a concise explanation.
-
----
-
-# 70. README Structure
-
-Use:
-
 ```text
 Hero
-↓
-What It Does
-↓
-Product Screenshots
-↓
-Data Pipeline
-↓
-Entity Resolution
-↓
-Comparable Sales
-↓
-Excel Reporting
-↓
-Architecture
-↓
-Technical Decisions
-↓
-Running Locally
-↓
-Testing
-↓
-Methodology
-↓
-Demo Data
-↓
-Limitations
+│
+├── Screenshot
+│
+├── What it does
+│
+├── Demo
+│
+├── Core workflow
+│
+├── Entity resolution
+│
+├── Property research
+│
+├── Comparable sales
+│
+├── Excel reporting
+│
+├── Architecture
+│
+├── Technical decisions
+│
+├── Running locally
+│
+├── Testing
+│
+├── Methodology
+│
+└── Limitations
 ```
 
 Do not create unnecessary sections.
 
 ---
 
-# 71. README Screenshots
+# 97. README — What It Does
 
-Tell the story visually.
+Keep it concise.
 
-## Market Intelligence
-
-Dashboard screenshot.
-
-Short explanation.
-
-## Transaction Research
-
-Transaction/property screenshot.
-
-Short explanation.
-
-## Entity Resolution
-
-Duplicate-review screenshot.
-
-Explain:
+Something like:
 
 ```text
-raw observations
-→ normalization
-→ similarity features
-→ review/merge
-→ canonical property
+Property Intel is a keyboard-driven research workstation for
+commercial-property transaction data.
+
+It ingests messy CSV/XLSX records, normalises and validates them,
+identifies records referring to the same physical property, and
+turns the resulting canonical dataset into searchable market
+intelligence and Excel reports.
 ```
-
-## Comparable Sales
-
-Screenshot.
-
-Show the formula/methodology briefly.
-
-## Excel Reporting
-
-Workbook screenshot.
-
-Mention that it is generated programmatically using `openpyxl`.
 
 ---
 
-# 72. README Architecture Diagram
+# 98. README — Screenshots
 
-Use Mermaid.
+Integrate screenshots with the story.
+
+Do not dump screenshots into a gallery without explanation.
 
 Example:
+
+## Market Overview
+
+`overview.png`
+
+Brief explanation.
+
+## Entity Resolution
+
+`duplicate-review.png`
+
+Brief explanation and scoring methodology.
+
+## Property Research
+
+`property-detail.png`
+
+Brief explanation.
+
+## Comparable Sales
+
+`comparables.png`
+
+Brief explanation.
+
+## Excel Reporting
+
+`excel-report.png`
+
+Brief explanation.
+
+---
+
+# 99. README — Data Pipeline
+
+Use Mermaid:
 
 ```text
 CSV / XLSX
@@ -2212,94 +2815,188 @@ CSV / XLSX
 Raw Observations
     │
     ▼
-Cleaning & Validation
+Normalisation
+    │
+    ▼
+Validation
     │
     ▼
 Entity Resolution
     │
     ▼
-PostgreSQL
+Canonical SQLite Database
     │
-    ├──────────────┐
-    ▼              ▼
+    ├─────────────┐
+    ▼             ▼
 Analytics      Data Quality
-    │              │
-    └──────┬───────┘
+    │             │
+    └──────┬──────┘
            ▼
-        FastAPI
+       Textual TUI
            │
-      ┌────┴────┐
-      ▼         ▼
-   Next.js     Excel
+           ▼
+       Excel Reports
 ```
 
-Keep it attractive and understandable.
+Make the architecture understandable instantly.
 
 ---
 
-# 73. README Methodology
+# 100. README — Entity Resolution
 
-Explain enough technical depth to demonstrate competence.
-
-For entity resolution, briefly describe:
+Briefly explain:
 
 $$
 S =
-w_aS_a+w_gS_g+w_lS_l+w_tS_t
+w_aS_a+
+w_gS_g+
+w_lS_l+
+w_bS_b+
+w_tS_t
 $$
 
-For comparables:
+Explain each term.
+
+Mention:
+
+* deterministic normalization,
+* fuzzy similarity,
+* configurable thresholds,
+* manual review,
+* false-merge protection.
+
+Link to:
+
+```text
+docs/entity-resolution.md
+```
+
+for detail.
+
+---
+
+# 101. README — Comparables
+
+Explain:
 
 $$
 D =
-w_gD_g+w_lD_l+w_bD_b+w_tD_t+w_sD_s
+w_gD_g+
+w_lD_l+
+w_bD_b+
+w_tD_t+
+w_sD_s
 $$
 
-Explain what the terms mean.
+Explain that comparables are ranked using:
 
-Do not fill the README with academic derivations.
+```text
+location
+sector
+land area
+building area
+recency
+```
 
-Link to `/docs` for deeper detail.
-
----
-
-# 74. README Technical Decisions
-
-Include a short section explaining important decisions:
-
-### Raw observations vs canonical properties
-
-Prevents messy source data from corrupting the clean database.
-
-### Explainable entity resolution
-
-Analysts can inspect why two records are considered duplicates.
-
-### Explainable comparables
-
-Similarity is based on visible market characteristics.
-
-### Excel as a first-class output
-
-Commercial analysts frequently work with spreadsheet-based workflows, so Excel is treated as a core product surface rather than an afterthought.
-
-These explanations are more valuable than listing twenty libraries.
+Emphasise explainability.
 
 ---
 
-# 75. README Demo Data Disclosure
+# 102. README — Excel
+
+Show the workbook screenshot.
+
+Explain that the application programmatically generates a five-sheet market-intelligence workbook using `openpyxl`.
+
+Mention:
+
+```text
+Executive Summary
+Transactions
+Comparable Sales
+Sector Analysis
+Data Quality
+```
+
+---
+
+# 103. README — Technical Decisions
+
+Include a short section.
+
+### Why a TUI?
+
+The application is designed around high-density research workflows and keyboard-driven navigation rather than consumer-facing presentation.
+
+### Why SQLite?
+
+The intended workload is a local analytical dataset. SQLite provides sufficient performance while keeping the application trivial to run.
+
+### Why raw observations?
+
+Messy source records should not directly overwrite canonical property information.
+
+### Why explainable matching?
+
+Incorrectly merging two properties can corrupt subsequent analysis, so duplicate decisions should be inspectable.
+
+### Why Excel?
+
+Spreadsheet reporting remains a useful downstream interface for market research and analysis.
+
+Keep this concise.
+
+---
+
+# 104. README — Running
+
+The setup should be beautifully simple:
+
+```bash
+git clone <repo>
+cd property-intel
+
+uv sync
+uv run property-intel --demo
+```
+
+No Docker.
+
+No external database.
+
+No API keys required for demo mode.
+
+---
+
+# 105. README — Demo Data
 
 Clearly state:
 
-> The included dataset is synthetic and exists solely to demonstrate the data pipeline and analytics. Statistics shown in screenshots should not be interpreted as actual New Zealand commercial-property market statistics.
+> The repository includes a deterministic synthetic dataset designed to exercise the ingestion, validation, entity-resolution and analytics pipelines. It does not represent actual New Zealand commercial-property market statistics.
 
-This should be visible.
+Do not bury this.
 
 ---
 
-# 76. Documentation
+# 106. README — Badges
 
-Create only useful documentation:
+Use few or no badges.
+
+If used, only meaningful ones such as:
+
+```text
+Python
+Tests
+Ruff
+```
+
+Do not create a wall of technology badges.
+
+---
+
+# 107. Documentation
+
+Keep documentation small and useful:
 
 ```text
 docs/
@@ -2309,240 +3006,324 @@ docs/
 └── screenshots/
 ```
 
-Do not create documentation files merely to make the repository appear larger.
+Documentation should explain decisions and methodology.
+
+Do not duplicate source-code documentation.
 
 ---
 
-# 77. Final Impeccable Pass
-
-Once functionality is complete, inspect every actual rendered screen.
-
-Review:
-
-* dashboard,
-* transactions,
-* properties,
-* property detail,
-* comparables,
-* data quality,
-* import flow.
-
-Fix:
-
-* inconsistent spacing,
-* weak typography,
-* ugly tables,
-* chart issues,
-* alignment,
-* awkward forms,
-* poor number formatting,
-* weak states,
-* responsiveness,
-* accessibility.
-
-Do not judge UI quality from source code alone.
-
----
-
-# 78. Final Ponytail Pass
-
-Apply the actual `ponytail` skill across the completed product.
-
-Fix relevant issues.
-
----
-
-# 79. Final Uncodixfy Pass
-
-Inspect the entire repository.
-
-Remove:
-
-* dead code,
-* unnecessary comments,
-* generated-looking prose,
-* unnecessary abstractions,
-* unused dependencies,
-* duplicated helpers,
-* stale TODOs,
-* placeholder components,
-* debug logging,
-* unused configuration.
-
-Do not over-refactor working code.
-
----
-
-# 80. Final GitHub Pass
+# 108. Final Ponytail Pass
 
 Before completion:
 
-1. run `git status`,
-2. inspect all remaining diffs,
-3. check `.gitignore`,
-4. check for secrets,
-5. verify README,
-6. verify screenshot paths,
-7. verify Mermaid diagrams,
-8. verify local setup instructions,
-9. run backend tests,
-10. run frontend tests,
-11. run lint,
-12. run typecheck,
-13. run production build,
-14. regenerate Excel report,
-15. verify fresh database migration and seed.
+1. Read the Ponytail skill again if necessary.
+2. Run the complete relevant Ponytail workflow.
+3. Inspect every TUI screen.
+4. Fix issues.
+5. Re-run affected tests.
 
-Make the final commit.
+Ponytail is mandatory.
 
-Push to GitHub if configured and permitted.
-
-Confirm the remote contains the final commits.
+Do not merely state that it was used.
 
 ---
 
-# 81. Definition of Done
+# 109. Final Impeccable Pass
 
-The project is complete when a fresh user can:
+Inspect:
 
 ```text
-1. Clone repository
-2. Start application
-3. Load demo data
-4. View market dashboard
-5. Search 500+ properties
-6. Filter transactions
-7. Open a property
-8. View its transaction history
-9. Import messy CSV/XLSX data
-10. See validation problems
-11. Review a duplicate candidate
-12. Merge/keep duplicate records
-13. Find five comparable sales
-14. Understand why they are comparable
-15. Review data-quality issues
-16. Generate a professional Excel report
+Overview
+Transactions
+Transaction Detail
+Properties
+Property Detail
+Comparables
+Data Quality
+Duplicate Review
+Import
+Help
 ```
 
-and all major functionality works without editing source code.
-
----
-
-# 82. Hard Scope Boundary
-
-Do NOT add, unless required to complete an existing workflow:
-
-* authentication,
-* user teams,
-* permissions,
-* billing,
-* chatbots,
-* LLM features,
-* AI agents,
-* hedonic valuation ML,
-* price prediction,
-* ownership graphs,
-* lease modelling,
-* market alerts,
-* saved dashboards,
-* full audit systems,
-* microservices,
-* Redis,
-* message queues,
-* Kubernetes,
-* complex cloud infrastructure,
-* mobile apps,
-* residential property,
-* property listings marketplace.
-
-If tempted to add one of these, improve an existing feature instead.
-
----
-
-# 83. What To Polish Instead
-
-When core functionality is finished early, do NOT increase scope.
-
-Spend the remaining effort on:
+Check:
 
 ```text
-better entity resolution
-better tests
-better synthetic data
-better table UX
-better filtering
-better comparables
-better explanations
-better charts
-better Excel
-better error handling
-better performance
-better screenshots
-better documentation
-better README
+alignment
+spacing
+borders
+visual hierarchy
+colours
+focus
+selection
+tables
+numbers
+empty states
+errors
+keyboard navigation
+terminal resizing
 ```
 
-Depth over breadth.
+Fix inconsistencies.
 
 ---
 
-# 84. Success Criterion
+# 110. Final Uncodixfy Pass
 
-The finished project should not communicate:
+Review the entire repository.
 
-> "I know how to build dashboards."
+Remove:
+
+```text
+dead code
+unused dependencies
+obvious comments
+unnecessary docstrings
+duplicated helpers
+needless abstractions
+stale TODOs
+debug output
+placeholder code
+over-engineering
+```
+
+Do not simplify genuinely useful domain architecture.
+
+---
+
+# 111. Final Verification
+
+Test from a fresh environment.
+
+Run:
+
+```bash
+uv sync
+uv run pytest
+uv run ruff check .
+uv run mypy src
+uv run property-intel --demo
+```
+
+Then manually verify:
+
+```text
+Overview
+Search
+Transactions
+Filters
+Properties
+Property Detail
+Comparables
+Data Quality
+Duplicate Review
+CSV Import
+XLSX Import
+Excel Export
+Help
+Quit
+```
+
+Verify the generated Excel workbook manually.
+
+---
+
+# 112. Final GitHub Review
+
+Before the final push:
+
+```bash
+git status
+git log --oneline
+```
+
+Check:
+
+* sensible commit history,
+* no secrets,
+* no accidental database,
+* no temporary files,
+* no debugging files,
+* README renders properly,
+* screenshots load,
+* Mermaid diagrams render,
+* setup instructions work,
+* links work.
+
+Make a final logical commit if necessary.
+
+Push.
+
+Verify the push succeeded.
+
+---
+
+# 113. Definition of Done
+
+The project is complete when a new user can:
+
+```text
+git clone
+    ↓
+uv sync
+    ↓
+uv run property-intel --demo
+```
+
+and then:
+
+1. view the market overview,
+2. search properties,
+3. browse transactions,
+4. filter transaction data,
+5. inspect a property,
+6. view its transaction history,
+7. retrieve five comparable sales,
+8. understand why each comparable was selected,
+9. inspect data-quality issues,
+10. review duplicate candidates,
+11. merge or separate duplicates,
+12. import a CSV,
+13. import an XLSX workbook,
+14. see validation results,
+15. generate a professional Excel market report,
+
+without editing source code.
+
+---
+
+# 114. Hard Scope Boundary
+
+DO NOT ADD:
+
+```text
+web frontend
+web backend
+REST API
+Docker
+PostgreSQL
+authentication
+accounts
+cloud infrastructure
+Redis
+queues
+microservices
+AI chatbot
+LLM
+agents
+price prediction
+hedonic modelling
+portfolio optimisation
+ownership graph
+lease modelling
+residential property
+mobile app
+```
+
+unless this specification is explicitly changed.
+
+When core functionality is complete, **polish instead of expanding**.
+
+---
+
+# 115. Where Extra Time Goes
+
+If ahead of schedule, improve:
+
+```text
+entity-resolution accuracy
+false-merge protection
+parsers
+tests
+keyboard UX
+search
+table usability
+data-quality explanations
+comparable explanations
+TUI aesthetics
+Excel formatting
+performance
+documentation
+screenshots
+README
+```
+
+Do not add features.
+
+---
+
+# 116. Success Criterion
+
+The finished project should not primarily communicate:
+
+> "I can build a terminal application."
 
 It should communicate:
 
-> "I understand how messy market information becomes reliable decision-useful data."
+> "I understand how fragmented market data becomes reliable, decision-useful commercial-property intelligence."
 
-The strongest technical elements should therefore be:
+The terminal interface is simply a compact and distinctive way to demonstrate that system.
 
-**1. Data ingestion and cleaning**
+The technical story should remain:
 
-**2. Entity resolution**
-
-**3. Data validation and quality control**
-
-**4. Commercial-property transaction analytics**
-
-**5. Explainable comparable-sales analysis**
-
-**6. Professional Excel reporting**
-
-Everything else exists to make those six capabilities easier to understand and use.
+```text
+MESSY DATA
+    ↓
+ROBUST PARSING
+    ↓
+VALIDATION
+    ↓
+ENTITY RESOLUTION
+    ↓
+CANONICAL DATA
+    ↓
+MARKET ANALYSIS
+    ↓
+COMPARABLE SALES
+    ↓
+EXCEL
+```
 
 ---
 
-# 85. Begin
+# 117. Initial Codex Instructions
 
-Before coding:
+Do not immediately begin generating large amounts of code.
 
-1. Read this entire specification.
-2. Read repository instructions.
-3. Locate and read `impeccable`.
-4. Locate and read `ponytail`.
+First:
+
+1. Read this entire `MASTER_SPEC.md`.
+2. Read `AGENTS.md` and other repository instructions.
+3. Locate and read the actual `ponytail` skill.
+4. Locate and read `impeccable`.
 5. Locate and read `uncodixfy` if available.
 6. Inspect the existing repository.
-7. Inspect Git status and configured remotes.
-8. Create `IMPLEMENTATION_PLAN.md`.
-9. Map the specification into the phases above.
-10. Identify tests required for Phase 1.
+7. Run `git status`.
+8. Inspect configured Git remotes.
+9. Create `IMPLEMENTATION_PLAN.md`.
+10. Break the work into the phases specified above.
+11. Define the Phase 1 tests.
+12. Implement Phase 1 only.
+13. Run tests/lint/type checks relevant to Phase 1.
+14. Perform the required quality review.
+15. Inspect `git diff`.
+16. Commit Phase 1.
+17. Push if GitHub is configured and authentication permits.
+18. Proceed to Phase 2.
 
-Then implement **Phase 1 only**.
+Repeat this process sequentially.
 
-Verify it.
-
-Run the relevant quality passes.
-
-Commit it.
-
-Push the milestone to GitHub if the remote and credentials are configured.
-
-Then proceed sequentially.
-
-Do not skip phases simply to produce visible functionality faster.
+Maintain regular, meaningful Git commits throughout the build.
 
 Do not expand scope.
 
-When choosing between another feature and making an existing workflow exceptional, **make the existing workflow exceptional**.
+Do not add Docker.
+
+Do not replace the TUI with a web application.
+
+Do not postpone Ponytail until the end.
+
+Do not postpone all Git commits until the end.
+
+Do not write the final README until the product is sufficiently polished to capture representative screenshots.
+
+When the core product works, stop adding functionality and make it exceptional.
