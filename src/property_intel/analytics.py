@@ -25,6 +25,7 @@ def money(value: float | None) -> str:
 
 def overview(session: Session) -> dict:
     transactions = session.scalars(select(Transaction)).all()
+    observations = session.scalars(select(RawObservation)).all()
     yields = [t.reported_yield for t in transactions if t.reported_yield is not None]
     land_units = [t.price_per_land_m2 for t in transactions if t.price_per_land_m2 is not None]
     building_units = [
@@ -39,10 +40,10 @@ def overview(session: Session) -> dict:
         "median_land_unit": median(land_units) if land_units else None,
         "median_building_unit": median(building_units) if building_units else None,
         "yield_count": len(yields),
-        "review": session.scalar(
-            select(func.count(RawObservation.id)).where(RawObservation.status == "REVIEW")
-        )
-        or 0,
+        "review": sum(
+            o.status == "REVIEW" or bool(o.issues_json and '"warning"' in o.issues_json)
+            for o in observations
+        ),
         "year_counts": Counter(t.transaction_date.year for t in transactions),
         "sector_counts": Counter(t.property.sector for t in transactions),
     }

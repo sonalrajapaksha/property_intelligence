@@ -92,7 +92,11 @@ def seed(session: Session) -> None:
                 sale_price=price,
                 buyer_name=f"Buyer {i % 48} Ltd",
                 seller_name=f"Seller {i % 36} Ltd",
-                reported_yield=round(rng.uniform(0.035, 0.09), 4) if i % 9 else None,
+                reported_yield=0.248
+                if i % 79 == 0
+                else round(rng.uniform(0.035, 0.09), 4)
+                if i % 9
+                else None,
                 land_area_m2=p.land_area_m2,
                 building_area_m2=p.building_area_m2,
                 source_id=source.id,
@@ -120,9 +124,11 @@ def seed(session: Session) -> None:
             "City": p.city,
             "Tenant": raw_tenant,
             "Site Area": area,
-            "Sale Amount": raw_price,
-            "Settlement Date": "14 Mar 2026",
+            "Sale Amount": "-2" if status == "REJECTED" else raw_price,
+            "Settlement Date": "03/04/2026" if status == "REJECTED" else "14 Mar 2026",
         }
+        if 37 <= i < 55:
+            payload["Yield"] = "24.8%"
         session.add(
             RawObservation(
                 import_job_id=job.id,
@@ -146,6 +152,15 @@ def seed(session: Session) -> None:
                         }
                     ]
                     if status == "REJECTED"
+                    else [
+                        {
+                            "severity": "warning",
+                            "field": "reported_yield",
+                            "rule": "high",
+                            "message": "Reported yield of 24.8% is unusually high and should be reviewed.",
+                        }
+                    ]
+                    if 37 <= i < 55
                     else []
                 ),
             )

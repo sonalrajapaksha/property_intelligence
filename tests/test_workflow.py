@@ -70,6 +70,7 @@ def test_demo_analytics_comparables_excel(tmp_path: Path) -> None:
     seed(session)
     stats = overview(session)
     assert (stats["properties"], stats["transactions"]) == (420, 610)
+    assert stats["review"] == 30
     assert sum(group["transactions"] for group in market_breakdown(session, "quarter")) == 610
     assert sum(group["transactions"] for group in market_breakdown(session, "region")) == 610
     assert len(market_breakdown(session, "sector")) == 3
@@ -192,7 +193,7 @@ def test_tui_navigation(tmp_path: Path) -> None:
             await pilot.press("3")
             assert app.page == "properties" and len(app.rows) == 420
             await pilot.press("4")
-            assert app.page == "quality" and len(app.rows) == 37
+            assert app.page == "quality" and len(app.rows) == 55
             await pilot.press("5")
             assert app.page == "import"
             await pilot.press("escape", "/")

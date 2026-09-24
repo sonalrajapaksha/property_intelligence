@@ -470,15 +470,18 @@ class PropertyIntel(App):
             )
         elif self.page == "quality":
             title.update("DATA QUALITY  /  REVIEW QUEUE")
-            observations = self.session.scalars(
-                select(RawObservation).where(RawObservation.status.in_(["REVIEW", "REJECTED"]))
-            ).all()
+            all_observations = self.session.scalars(select(RawObservation)).all()
+            observations = [
+                o
+                for o in all_observations
+                if o.status in ("REVIEW", "REJECTED")
+                or bool(o.issues_json and '"warning"' in o.issues_json)
+            ]
             review = sum(o.status == "REVIEW" for o in observations)
-            rejected = len(observations) - review
+            rejected = sum(o.status == "REJECTED" for o in observations)
             quality_props = self.session.scalars(select(Property)).all()
             warnings = sum(
-                bool(o.issues_json and '"warning"' in o.issues_json)
-                for o in self.session.scalars(select(RawObservation))
+                bool(o.issues_json and '"warning"' in o.issues_json) for o in all_observations
             )
             suspicious = sum(
                 t.reported_yield is not None and t.reported_yield > 0.2
@@ -493,7 +496,7 @@ class PropertyIntel(App):
                 ["Type", "Observation", "Candidate", "Match", "Issue"],
                 [
                     [
-                        o.status,
+                        "WARNING" if o.status == "IMPORTED" else o.status,
                         o.raw_address or "—",
                         (
                             candidate.canonical_address
@@ -574,7 +577,7 @@ class PropertyIntel(App):
         elif isinstance(item, RawObservation):
             candidate = (
                 self.session.get(Property, item.matched_property_id)
-                if item.matched_property_id
+                if item.status == "REVIEW" and item.matched_property_id
                 else None
             )
             issues = json.loads(item.issues_json or "[]")
@@ -596,7 +599,7 @@ class PropertyIntel(App):
                 except ValueError:
                     match_evidence = "Source area could not be parsed."
             body = (
-                f"{'POTENTIAL DUPLICATE' if candidate else 'IMPORT ISSUE'}\n\nSOURCE OBSERVATION                  EXISTING PROPERTY\n{item.raw_address or '—':<35} {candidate.canonical_address if candidate else '—'}\n{item.raw_land_area or '—':<35} {f'{candidate.land_area_m2:,.0f} m²' if candidate and candidate.land_area_m2 else '—'}\n{item.raw_tenant or '—':<35} {candidate.tenant_name if candidate else '—'}\n\nMATCH EVIDENCE\n{match_evidence}\nOverall          {pct(item.match_score)}\n"
+                f"{'POTENTIAL DUPLICATE' if candidate else 'VALIDATION WARNING' if item.status == 'IMPORTED' else 'IMPORT ISSUE'}\n\nSOURCE OBSERVATION                  EXISTING PROPERTY\n{item.raw_address or '—':<35} {candidate.canonical_address if candidate else '—'}\n{item.raw_land_area or '—':<35} {f'{candidate.land_area_m2:,.0f} m²' if candidate and candidate.land_area_m2 else '—'}\n{item.raw_tenant or '—':<35} {candidate.tenant_name if candidate else '—'}\n\nMATCH EVIDENCE\n{match_evidence}\nOverall          {pct(item.match_score)}\n"
                 + "\n".join(issue.get("message", "") for issue in issues)
             )
             self.push_screen(
